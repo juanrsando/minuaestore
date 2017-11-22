@@ -22,6 +22,7 @@
   </div>
 
   <div class="field">
+    <!-- aqui que rollo, que hago para que se guarde un producto nuevo con una category ya existene? -->
     <%= form.label :category_id %>
     <% @categories.each do |c|%>
     <%=form.radio_button :category_id,c%><%=c.name%>
