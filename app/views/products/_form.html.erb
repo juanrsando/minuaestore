@@ -24,7 +24,7 @@
   <div class="field">
     <%= form.label :category_id %>
     <% @categories.each do |c|%>
-    <%=form.radio_button :category_id,c%><%=c.name%>
+    <%=form.radio_button :category_id,c.id%><%=c.name%>
     <% end %>
   </div>
 
