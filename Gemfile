@@ -23,6 +23,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'carrierwave'
 #for tumbnails MiniMagick
 gem'mini_magick'
+#devise para los users
+gem 'devise'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
