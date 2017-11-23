@@ -42,11 +42,15 @@
     <%= form.label :price %>
     <%= form.text_field :price, id: :product_price %>
   </div>
+  <div class="field">
+    <%= form.label :stock %>
+    <%= form.text_field :stock, id: :product_stock %>
+  </div>
 <div class="field">
  <%= form.label :photo %>
- <%= f.file_field :photo %>
- <%= f.text_field :remote_photo_url %>
- <%= f.hidden_field :photo_cache %>
+ <%= form.file_field :photo %>
+ <%= form.text_field :remote_photo_url %>
+ <%= form.hidden_field :photo_cache %>
  <%= image_tag(@product.photo) if @product.photo? %>
 </div>
   <div class="actions">
