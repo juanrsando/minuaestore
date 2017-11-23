@@ -3,7 +3,21 @@
 
 <h1>Products</h1>
 
-<table>
+
+<div class="container">
+  <% @products.each do |product| %>
+  <figure class="figure">
+    <%= image_tag(product.photo, class:"figure-img img-fluid rounded",class:"img-responsive",alt:"Click for info!") if product.photo? %>
+    <div class="media-body">
+  <figcaption class="figure-caption">
+    <h5 class="mt-0"><%=product.name%></h5>
+    <%=product.description%>
+    <p><%= link_to 'Show', product %></p>
+</figcaption>
+ </figure>
+  <% end%>
+  </div>
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -18,7 +32,9 @@
 
   <tbody>
     <% @products.each do |product| %>
-    <%= image_tag(product.photo.thumb, class:"img-responsive") if product.photo? %>
+    <div class="container">
+      <%= image_tag(product.photo.thumb, class:"img-responsive") if product.photo? %>
+    </div>
       <tr>
         <td><%= image_tag product.photo.thumb %></td>
         <td><%= product.name %></td>
@@ -34,7 +50,8 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
+</div>
 <br>
 
 
