@@ -7,21 +7,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     @categories = Category.all
   end
-def buy
-  @product = Product.find(params[:id])
-  @payment = Payment.new({
-    code: "",
-    payment_method: ""
-  })
-   # Create Payment and return status
-   if @payment.create
-   # Redirect the user to given approval url
-   @redirect_url = @payment.links.find{|v| v.method == "REDIRECT" }.href
-   redirect_to @redirect_url
-   else
-   render json: @payment.error
-   end
-end
+
   # GET /products/1
   # GET /products/1.json
   def show

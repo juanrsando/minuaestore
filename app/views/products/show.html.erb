@@ -3,44 +3,85 @@
 <h3 align="center"><%=@product.name%></h3>
 <br>
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <%= image_tag(@product.photo) if @product.photo?%>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <table>
-                <tbody>
-                    <tr>
-                        <td><%= @product.name %></td>
-                        <tr>
-                            <td><%= @product.description %></td>
-                            <tr>
-                                <td>Categoría:</td>
-                                <td><%= @product.category.name %></td>
-                                <tr>
-                                    <td>Tamaño:</td>
-                                    <td><%= @product.size %></td>
-                                    <tr>
-                                        <td>Color:</td>
-                                        <td><%= @product.color %></td>
-                                        <tr>
-                                            <td>Precio:</td>
-                                            <td><%= @product.price %></td>
-                                            <tr>
+  <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <%= image_tag(@product.photo) if @product.photo?%>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <table>
+      <tbody>
+          <tr>
+            <td><%= @product.name %></td>
+          <tr>
+            <td><%= @product.description %></td>
+          <tr>
+            <td>Categoría:</td>
+            <td><%= @product.category.name %></td>
+          <tr>
+            <td>Tamaño:</td>
+            <td><%= @product.size %></td>
+          <tr>
+            <td>Color:</td>
+            <td><%= @product.color %></td>
+          <tr>
+              <td>Precio:</td>
+              <td><%= @product.price %></td>
+          <tr>
 
-                                                <td>Tamaño:</td>
-                                                <td><%= @product.stock %></td>
+              <td>Tamaño:</td>
+            <td><%= @product.stock %></td>
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div align:"center">
-                                <%if current_user.try(:admin?)%>
-                                <p><%= link_to 'Edit Stock or Product Info', edit_product_path(@product) %></p>
-                            <% else %>
-                                <p><%= link_to 'Comprar', products_path%></p>
-                                <% end%>
-                                <%= link_to 'Back', products_path %>
-                            </div>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<!-- 
+
+
+
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category.name %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @product.size %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @product.color %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @product.stock %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <p><%= image_tag(@product.photo) if @product.photo?%></p>
+</p> -->
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
