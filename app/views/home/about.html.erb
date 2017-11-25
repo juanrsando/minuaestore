@@ -1,0 +1,47 @@
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+.fit {
+  max-width: 100%;
+  max-height: 100%;
+}
+.center {
+  display: block;
+  margin: auto;
+}
+.wrapper {
+    text-align: left;
+}
+
+.buttoncenter {
+    position: absolute;
+    top: 80%;
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" language="JavaScript">
+function set_body_height()
+{
+    var wh = $(window).height();
+    $('body').attr('style', 'height:' + wh + 'px;');
+}
+$(document).ready(function() {
+    set_body_height();
+    $(window).bind('resize', function() { set_body_height(); });
+});
+</script>
+<h1 align="center" class="font1">Minuá Jewelry Design</h1>
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" align="center">
+<a href="https://www.instagram.com/minuajewelry/"><img src="<%=asset_path "90IGicon.jpg"%>" height="100" width="100"></a>
+ </div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"align="center">
+<a href="https://www.facebook.com/minuajewelry/"><img src="<%=asset_path "91FBicon.png"%>" height="100" width="100"></a>
+</div>
+</div>
+<br>
+<img src="<%= asset_path "11about.jpg"%>"class="center fit">
+
+<br>
