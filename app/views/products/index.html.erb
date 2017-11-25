@@ -19,15 +19,17 @@
 
     <div class="media-body">
   <figcaption class="figure-caption">
-    <h5 class="mt-0"><%=product.name%></h5>
-    <%=product.description%>
+    <h4 class="mt-0"><%=product.name%></h4>
+    <small><%=product.description%></small>
     <%if current_user.try(:admin?)%>
     <p><%= link_to 'Edit Stock or Product Info', edit_product_path(product) %></p>
     <% else %>
     <p><%= link_to 'Comprar', product%></p>
     <% end%>
-    <p> </p>
-    <p> </p>
+    <br>
+    <br>
+    <br>
+
 </figcaption>
  </figure>
  </div>

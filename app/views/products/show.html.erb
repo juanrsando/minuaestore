@@ -1,6 +1,13 @@
-<p id="notice"><%= notice %></p>
 
+<p id="notice"><%= notice %></p>
+<style>
+table tbody tr td {
+  font-family: 'Raleway', sans-serif;
+}
+</style>
+<div align="center">
 <h3 align="center"><%=@product.name%></h3>
+<h4 align="center">Información del Producto</h3>
 <br>
 <div class="container">
     <div class="row">
@@ -8,34 +15,41 @@
             <%= image_tag(@product.photo) if @product.photo?%>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <table>
-                <tbody>
+            <table width="400" height="400">
+                <tbody class="font1">
                     <tr>
-                        <td><%= @product.name %></td>
+                        <td align="center"><%= @product.name %></td>
                         <tr>
                             <td><%= @product.description %></td>
                             <tr>
                                 <td>Categoría:</td>
-                                <td><%= @product.category.name %></td>
+                                <td align="center"><%= @product.category.name %></td>
                                 <tr>
                                     <td>Tamaño:</td>
-                                    <td><%= @product.size %></td>
+                                    <td align="center"><%= @product.size %></td>
                                     <tr>
                                         <td>Color:</td>
-                                        <td><%= @product.color %></td>
+                                        <td align="center"><%= @product.color %></td>
                                         <tr>
                                             <td>Precio:</td>
-                                            <td><%= @product.price %></td>
+                                            <td align="center"><%= @product.price %></td>
                                             <tr>
 
-                                                <td>Tamaño:</td>
-                                                <td><%= @product.stock %></td>
+                                                <td>Stock:</td>
+                                                <td align="center"><%  if @product.stock > 0 %>
+                                                    Disponible
+                                                    <% else %>
+                                                    No Disponible al momento
+                                                    <% end%>
+                                                </td>
 
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
+                            <br>
+                            <br>
                             <div align:"center">
                                 <%if current_user.try(:admin?)%>
                                 <p><%= link_to 'Edit Stock or Product Info', edit_product_path(@product) %></p>
@@ -43,4 +57,5 @@
                                 <p><%= link_to 'Comprar', products_path%></p>
                                 <% end%>
                                 <%= link_to 'Back', products_path %>
+                            </div>
                             </div>
