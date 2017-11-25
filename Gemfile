@@ -25,6 +25,8 @@ gem 'carrierwave'
 gem'mini_magick'
 #devise para los users
 gem 'devise'
+#para las compras con paypal
+gem 'paypal-sdk-rest'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -46,6 +48,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry'
 end
 
 group :development do

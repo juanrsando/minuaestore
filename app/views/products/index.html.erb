@@ -23,6 +23,8 @@
     <%=product.description%>
     <%if current_user.try(:admin?)%>
     <p><%= link_to 'Edit Stock or Product Info', edit_product_path(product) %></p>
+    <% else %>
+    <p><%= link_to 'Comprar', buy_product_path(product)%></p>
     <% end%>
     <p> </p>
     <p> </p>
