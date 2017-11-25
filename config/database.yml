@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: minuaestore_production
-  username: minuaestore
-  password: <%= ENV['MINUAESTORE_DATABASE_PASSWORD'] %>
+  database: d8u9kcgv49i9ip
+  username: gbsvekkrsyoarb
+  password: 2e9c2d1babbd99a5215f9ea7efec88554f3d5568a7507624f1fc06ccc368f812
