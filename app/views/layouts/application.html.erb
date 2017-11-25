@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Minuaestore</title>
+    <title>Minua Jewelry Design</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,8 +10,44 @@
   <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
   </head>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="<%= home_index_path%>"><img src="<%= asset_path "15logominuathumb.png"%>"width="110" height="50"class="img-fluid"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav nav-justified">
+        <li><a href="<%=products_path%>">Productos<span class="sr-only">(current)</span></a></li>
+        <li><a href="<%=home_about_path%>">Sobre Minuá</a></li>
+        <% if user_signed_in? %>
+        <li><a href="#">Carrito</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=current_user.email if user_signed_in?%><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Direcciones</a></li>
+            <li role="separator" class="divider"></li>
+            <li> <a href="<%= destroy_user_session_path %>" data-method='delete'>Salir</a></li>
+          </ul>
+        </li>
+        <% else %>
+        <li><a href="<%= new_user_session_path %>"> Login </a></li>
+        <li><a href="<%= new_user_registration_path %>"> Registro </a></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+
 
   <body>
     <%= yield %>
