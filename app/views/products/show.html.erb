@@ -36,56 +36,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--
-
-
-
-
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category.name %>
-</p>
-
-<p>
-  <strong>Size:</strong>
-  <%= @product.size %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @product.color %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Stock:</strong>
-  <%= @product.stock %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <p><%= image_tag(@product.photo) if @product.photo?%></p>
-</p> -->
                             <div align:"center">
                                 <%if current_user.try(:admin?)%>
                                 <p><%= link_to 'Edit Stock or Product Info', edit_product_path(@product) %></p>
                             <% else %>
-                                <p><%= link_to 'Comprar', buy_product_path(@product)%></p>
+                                <p><%= link_to 'Comprar', products_path%></p>
                                 <% end%>
                                 <%= link_to 'Back', products_path %>
                             </div>
